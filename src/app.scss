@@ -1,0 +1,227 @@
+@use '@carbon/react';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#root{
+    height: 100vh;
+    margin: 0;
+    padding:0;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+//////////////////////////// Landing Page
+
+.main-container{
+    background-image: url(./assets/Ocean.png) ;
+    background-size: cover;
+}
+img{
+    min-width: 100%;
+    max-height: 50vh;
+}
+/////////////////////// Re-styling the Button Component
+.navigation-content{
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 15px;
+}
+
+.frame-calculator{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    height: calc(95vh - 111px);
+}
+//////////////////////////////////// Welcome Page 1/3 Grid System
+
+.block-top{
+    width: 66%;
+    height: calc(100% / 3);
+    // background-color: rgba(84, 232, 245, 0.287);
+}
+.block-middle{
+    width: 100%;
+    height: calc(100% / 3);
+    // background-color: rgba(0, 221, 255, 0.752);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.block-middle .country {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.block-middle .date{
+    width: 65%;
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.block-middle .date-picker{
+    width: 17.9375rem;
+    align-items: flex-end;
+}
+.block-middle .country-picker{
+    width: 17.9375rem;
+    align-items: flex-end;
+}
+
+.block-bottom{
+    width: 100%;
+    height: calc(100% / 3);
+    // background-color: rgba(0, 221, 255, 0.217);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.block-bottom .block-bottom-top{
+    width: 100%;
+    height: calc(100% / 3);
+    // background-color: rgba(183, 195, 67, 0.564);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.block-bottom .navigation-container{
+    width: 100%;
+    height: calc(100% / 3);
+    // background-color: rgba(233, 150, 122, 0.271);
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: center;
+
+}
+
+///////////////////////////////////////////////////
+@keyframes bg {
+    0% {
+        background-size:    0 3px,
+                            3px 0,
+                            0 3px,
+                            3px 0;
+    }
+    25% {
+        background-size:    100% 3px,
+                            3px 0,
+                            0 3px,
+                            3px 0;
+    }
+    50% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            0 3px,
+                            3px 0;
+    }
+    75% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            100% 3px,
+                            3px 0;
+    }
+    100% {
+        background-size:    100% 3px,
+                            3px 100%,
+                            100% 3px,
+                            3px 100%;
+    }
+}
+
+.frame-calculator {
+  
+    
+    background-repeat: no-repeat;
+    background-image:   linear-gradient(to right, #0f62fe 10%, #C9C9C9 100%),
+                        linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%),
+                        linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+                        linear-gradient(to bottom, #0f62fe 10%, #C9C9C9 100%);
+    background-size:    100% 3px,
+                        3px 100%,
+                        100% 3px,
+                        3px 100%;
+    background-position:    0 0,
+                            100% 0,
+                            100% 100%,
+                            0 100%;
+    animation: bg 5.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+    animation-play-state: paused;
+}
+
+.frame-calculator:hover {
+    animation-play-state: running;
+}
+
+@media only screen and (max-width: 1400px) {
+    body{
+        background-color: black;
+    }
+    .frame-calculator{
+        padding: 20px;
+        margin: -1rem;
+        display: flex;
+        flex-direction: column;
+        height: 90vh;       
+    }
+    .block-top h1{
+        font-size: 26px;
+        
+    }
+    .block-middle .country {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .block-middle .country h3{
+        font-size: 0.8rem;
+    }
+    .block-middle .date{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .block-middle .date .date-text h3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+ 
+
+
+    .block-top .title{
+        margin-bottom: 3rem;
+    }
+   
+ 
+  
+
+    .hide-text{
+        display: none;
+    }
+   
+
+
+
+
+}
