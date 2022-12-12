@@ -9,7 +9,7 @@ After having the UI on place we are going to add the functionality.
 block = 1
 sub-block = 1/3
 
-If you go to WelcomePage you can see frame-calculator this is the regulator for the width and height of the view. This frame is divided by 3 vertically and by 2 or 3 (33 66 99) horizontally
+If you go to WelcomePage you can see frame-calculator this is the regulator for the width and height of the view. This frame is divided by 3 vertically and by 2 or 3 (33 66 99) .horizontally
 
 There is: 
 
