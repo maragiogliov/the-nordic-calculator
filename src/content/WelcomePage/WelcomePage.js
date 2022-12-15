@@ -11,7 +11,7 @@ const WelcomePage = () => {
         <div className='block-top'>
           <div className='title'>
             <h1>Welcome to the Nordic Waves </h1>
-            <h1>Carbon Footprint Calculator</h1>
+            <h1>Carbon Footprint Calculator </h1>
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
