@@ -6,12 +6,12 @@ import Button from '@carbon/react/lib/components/Button/Button';
 const RepoPage = () => {
   return <>
   <section className='frame-calculator'>
-  <h1>HOUSE</h1>
+    <h1>CAR</h1>
             <div className='button-container'>
-              <Link to="/welcome">
+              <Link to="/house">
                 <Button className='button-content'>Previous</Button>
               </Link>
-              <Link to="/car">
+              <Link to="/motorbike">
                 <Button className='button-content'>Next</Button>
               </Link>
             </div>

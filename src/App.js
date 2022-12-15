@@ -7,21 +7,30 @@ import { Content } from '@carbon/react';
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from './content/LandingPage';
 import WelcomePage from './content/WelcomePage';
-import HousePage from './content/HousePage/HousePage'
+import HousePage from './content/HousePage/HousePage';
+import CarPage from './content/CarPage';
+import MotorbikePage from './content/MotorbikePage';
+import BusRailPage from './content/BusRailPage';
+// import SecondaryPage from './content/SecondaryPage';
+// import ResultsPage from './content/ResultsPage';
 
 class App extends Component {
   render() {
     return (
       <>
       <BrowserRouter>
-      <Theme theme="g100">
+      <Theme theme="g10">
        <TheHeader />
         <Content>
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/welcome" component={WelcomePage} />
             <Route path="/house" component={HousePage} />
-
+            <Route path="/car" component={CarPage} />
+            <Route path="/motorbike" component={MotorbikePage} />
+            <Route path="/bus-rail" component={BusRailPage} />
+            {/* <Route path="/secondary" component={SecondaryPage} />
+            <Route path="/results" component={ResultsPage} /> */}
           </Switch>
         </Content>
       </Theme>

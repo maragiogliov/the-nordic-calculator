@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/motion": "^11.7.0",
     "@carbon/react": "^1.18.0",
     "react": "^17.0.2",
     "react-country-region-selector": "^3.6.1",
