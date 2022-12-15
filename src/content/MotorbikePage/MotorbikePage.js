@@ -1,6 +1,5 @@
 import React from 'react';
-import {Tabs, Tab,TabList,TabPanels,TabPanel, Button} from '@carbon/react';
-import { ProgressIndicator, ProgressStep, ProgressIndicatorSkeleton } from '@carbon/react';
+import { Button } from '@carbon/react';
 import { DatePicker, DatePickerInput } from '@carbon/react';
 import { Dropdown } from '@carbon/react';
 import { Link } from 'react-router-dom';
