@@ -46,6 +46,9 @@ const TheHeader = () => (
         <HeaderMenuItem element={Link} to="/bus-rail">
           Bus and Rail
         </HeaderMenuItem>
+        <HeaderMenuItem element={Link} to="/progress-indicator">
+          Progress Indicator
+        </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
           aria-label="Side navigation"
@@ -67,6 +70,9 @@ const TheHeader = () => (
             </HeaderSideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem href="/bus-rail">Bus and Rail</HeaderMenuItem>
+            </HeaderSideNavItems>
+            <HeaderSideNavItems>
+              <HeaderMenuItem href="/progress-indicator">Progress Indicator</HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>
