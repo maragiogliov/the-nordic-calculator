@@ -11,7 +11,8 @@ import HousePage from './content/HousePage/HousePage';
 import CarPage from './content/CarPage';
 import MotorbikePage from './content/MotorbikePage';
 import BusRailPage from './content/BusRailPage';
-import ProgressIndicatorPage from './content/ProgressIndicatorPage';
+import SecondaryPage from './content/SecondaryPage'
+import ResultsPage from './content/ResultsPage';
 // import SecondaryPage from './content/SecondaryPage';
 // import ResultsPage from './content/ResultsPage';
 
@@ -30,7 +31,8 @@ class App extends Component {
             <Route path="/car" component={CarPage} />
             <Route path="/motorbike" component={MotorbikePage} />
             <Route path="/bus-rail" component={BusRailPage} />
-            <Route path="/progress-indicator" component={ProgressIndicatorPage} />
+            <Route path="/secondary" component={SecondaryPage} />
+            <Route path="/results" component={ResultsPage} />
             {/* <Route path="/secondary" component={SecondaryPage} />
             <Route path="/results" component={ResultsPage} /> */}
           </Switch>

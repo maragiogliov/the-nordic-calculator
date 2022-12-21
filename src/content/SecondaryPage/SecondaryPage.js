@@ -4,14 +4,14 @@ import { DatePicker, DatePickerInput } from '@carbon/react';
 import { Dropdown } from '@carbon/react';
 import { Link } from 'react-router-dom';
 
-const WelcomePage = () => {
+const SecondaryPage = () => {
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
           <div className='title'>
-            <h1>Welcome to the Nordic Waves </h1>
-            <h1>Carbon Footprint Calculator </h1>
+            <h1>Secondary </h1>
+           
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
@@ -59,10 +59,11 @@ const WelcomePage = () => {
       <div className='block-bottom'>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
-        <Link to="/house">
-          <Button 
-           
-           className="navigation-content">Next</Button>
+        <Link to="/bus-rail">
+          <Button className="navigation-content">Previous</Button>
+        </Link>
+        <Link to="/results">
+          <Button className="navigation-content">Next</Button>
         </Link>
         </div>
       </div>
@@ -73,4 +74,4 @@ const WelcomePage = () => {
 
 };
 
-export default WelcomePage;
+export default SecondaryPage;

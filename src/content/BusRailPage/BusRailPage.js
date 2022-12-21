@@ -62,7 +62,7 @@ const BusRailPage = () => {
         <Link to="/motorbike">
           <Button className="navigation-content">Previous</Button>
         </Link>
-        <Link to="/house">
+        <Link to="/secondary">
           <Button className="navigation-content">Next</Button>
         </Link>
         </div>

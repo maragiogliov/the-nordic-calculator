@@ -17,6 +17,8 @@ import { Switcher, Notification, UserAvatar } from '@carbon/react/icons';
 import { Link } from 'react-router-dom';
 
 
+
+
 const TheHeader = () => (
   <HeaderContainer
     render={({ isSideNavExpanded, onClickSideNavExpand }) => (
@@ -28,13 +30,19 @@ const TheHeader = () => (
           isActive={isSideNavExpanded}
         />
       <HeaderName element={Link} to="/" prefix="">
-        Nordic Waves Calculator
+        
+       Carbon Calculator by Nordic Waves
       </HeaderName>
+      
         <HeaderNavigation aria-label="Carbon Calculator">
-        <HeaderMenuItem element={Link} to="/welcome">
+        <HeaderMenuItem
+         isCurrentPage={false}
+         element={Link} to="/welcome">
          Welcome
         </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/house">
+        <HeaderMenuItem
+          isCurrentPage={false}
+          element={Link} to="/house">
           House
         </HeaderMenuItem>
         <HeaderMenuItem element={Link} to="/car">
@@ -46,8 +54,11 @@ const TheHeader = () => (
         <HeaderMenuItem element={Link} to="/bus-rail">
           Bus and Rail
         </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/progress-indicator">
-          Progress Indicator
+        <HeaderMenuItem element={Link} to="/secondary">
+          Secondary
+        </HeaderMenuItem>
+        <HeaderMenuItem element={Link} to="/results">
+          Results
         </HeaderMenuItem>
         </HeaderNavigation>
         <SideNav
@@ -72,7 +83,7 @@ const TheHeader = () => (
               <HeaderMenuItem href="/bus-rail">Bus and Rail</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/progress-indicator">Progress Indicator</HeaderMenuItem>
+              <HeaderMenuItem href="/results">Results</HeaderMenuItem>
             </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>
