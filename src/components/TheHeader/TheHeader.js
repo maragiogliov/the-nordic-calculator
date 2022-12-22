@@ -35,31 +35,8 @@ const TheHeader = () => (
       </HeaderName>
       
         <HeaderNavigation aria-label="Carbon Calculator">
-        <HeaderMenuItem
-         isCurrentPage={false}
-         element={Link} to="/welcome">
-         Home
-        </HeaderMenuItem>
-        <HeaderMenuItem
-          isCurrentPage={false}
-          element={Link} to="/house">
-          House
-        </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/car">
-          Car
-        </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/motorbike">
-          Motorbike
-        </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/bus-rail">
-          Bus and Rail
-        </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/secondary">
-          Secondary
-        </HeaderMenuItem>
-        <HeaderMenuItem element={Link} to="/results">
-          Results
-        </HeaderMenuItem>
+       
+  
         </HeaderNavigation>
         <SideNav
           aria-label="Side navigation"
@@ -72,6 +49,9 @@ const TheHeader = () => (
             </HeaderSideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem href="/house">House</HeaderMenuItem>
+            </HeaderSideNavItems>
+            <HeaderSideNavItems>
+              <HeaderMenuItem href="/house">Flight</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem href="/car">Car</HeaderMenuItem>

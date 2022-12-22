@@ -13,6 +13,7 @@ import MotorbikePage from './content/MotorbikePage';
 import BusRailPage from './content/BusRailPage';
 import SecondaryPage from './content/SecondaryPage'
 import ResultsPage from './content/ResultsPage';
+import FlightPage from './content/FlightPage';
 // import SecondaryPage from './content/SecondaryPage';
 // import ResultsPage from './content/ResultsPage';
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/welcome" component={WelcomePage} />
             <Route path="/house" component={HousePage} />
+            <Route path="/flight" component={FlightPage} />
             <Route path="/car" component={CarPage} />
             <Route path="/motorbike" component={MotorbikePage} />
             <Route path="/bus-rail" component={BusRailPage} />

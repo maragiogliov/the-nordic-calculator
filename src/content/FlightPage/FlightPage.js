@@ -11,12 +11,12 @@ import {Bus} from '@carbon/react/icons';
 import {Add} from '@carbon/react/icons';
 import { ChartLineData } from '@carbon/react/icons';
 
-const MotorbikePage = () => {
+const BusRailPage = () => {
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
-        <div className='progress-bar-container'>
+          <div className='progress-bar-container'>
     <Home
      className='iconClass'
     size='32px' />
@@ -29,11 +29,11 @@ const MotorbikePage = () => {
     size='32px'
     />
      <Scooter
-      
+      className='iconClass'
     size='32px'
     />
      <Bus
-     className='iconClass'
+      
     size='32px'
     />
      <Add
@@ -47,7 +47,7 @@ const MotorbikePage = () => {
 
   </div>
           <div className='title'>
-            <h1>Motorbike </h1>
+            <h1>Flight </h1>
            
           </div>
         </div>
@@ -96,10 +96,10 @@ const MotorbikePage = () => {
       <div className='block-bottom'>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
-        <Link to="/car">
+        <Link to="/welcome">
           <Button className="navigation-content">Previous</Button>
         </Link>
-        <Link to="/bus-rail">
+        <Link to="/car">
           <Button className="navigation-content">Next</Button>
         </Link>
         </div>
@@ -111,4 +111,4 @@ const MotorbikePage = () => {
 
 };
 
-export default MotorbikePage;
+export default BusRailPage;
