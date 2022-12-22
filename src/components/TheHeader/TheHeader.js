@@ -38,7 +38,7 @@ const TheHeader = () => (
         <HeaderMenuItem
          isCurrentPage={false}
          element={Link} to="/welcome">
-         Welcome
+         Home
         </HeaderMenuItem>
         <HeaderMenuItem
           isCurrentPage={false}
@@ -68,7 +68,7 @@ const TheHeader = () => (
         >
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/welcome">Welcome</HeaderMenuItem>
+              <HeaderMenuItem href="/welcome">Home</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem href="/house">House</HeaderMenuItem>

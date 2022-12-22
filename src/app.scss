@@ -46,9 +46,18 @@ img{
 //////////////////////////////////// Welcome Page 1/3 Grid System
 
 .block-top{
-    width: 66%;
+    width: 100%;
     height: calc(100% / 3);
     background-color:($base-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: scroll;
+    
+}
+.block-top .title {
+    background-color: #0f62fe;
+    margin-top: 5%;
 }
 .block-middle{
     width: 100%;

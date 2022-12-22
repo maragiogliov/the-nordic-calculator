@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/icons": "^11.13.0",
     "@carbon/motion": "^11.7.0",
     "@carbon/react": "^1.18.0",
     "carbon-components-react": "^8.19.0",
