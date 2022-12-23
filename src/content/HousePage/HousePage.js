@@ -11,29 +11,28 @@ import {Bus} from '@carbon/react/icons';
 import {Add} from '@carbon/react/icons';
 import { ChartLineData } from '@carbon/react/icons';
 
-const WelcomePage = () => {
+const HousePage = () => {
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
         <div className='progress-bar-container'>
     <Home
-    className='iconClass'
     size='32px' />
-    <PlanePrivate
-    className='iconClass'
-    size='32px'
-    />
+     <PlanePrivate
+      className='iconClass'
+     size='32px'
+     />
     <Car
      className='iconClass'
     size='32px'
     />
      <Scooter
-      className='iconClass'
+    className='iconClass'
     size='32px'
     />
      <Bus
-      className='iconClass'
+     className='iconClass'
     size='32px'
     />
      <Add
@@ -47,8 +46,8 @@ const WelcomePage = () => {
 
   </div>
           <div className='title'>
-            <h1>Welcome to the Nordic Waves </h1>
-            <h1>Carbon Footprint Calculator </h1>
+            <h1>House </h1>
+           
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
@@ -96,10 +95,11 @@ const WelcomePage = () => {
       <div className='block-bottom'>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
-        <Link to="/house">
-          <Button 
-           
-           className="navigation-content">Next</Button>
+        <Link to="/welcome">
+          <Button className="navigation-content">Previous</Button>
+        </Link>
+        <Link to="/flight">
+          <Button className="navigation-content">Next</Button>
         </Link>
         </div>
       </div>
@@ -110,4 +110,4 @@ const WelcomePage = () => {
 
 };
 
-export default WelcomePage;
+export default HousePage;

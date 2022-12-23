@@ -46,7 +46,10 @@ const TheHeader = () => (
         >
           <SideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/welcome">Home</HeaderMenuItem>
+              <HeaderMenuItem href="/welcome">Welcome</HeaderMenuItem>
+            </HeaderSideNavItems>
+            <HeaderSideNavItems>
+              <HeaderMenuItem href="/house">Home</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
               <HeaderMenuItem href="/house">Flight</HeaderMenuItem>

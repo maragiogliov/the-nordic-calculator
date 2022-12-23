@@ -7,6 +7,9 @@ import { Content } from '@carbon/react';
 import { Route, Switch } from 'react-router-dom';
 import LandingPage from './content/LandingPage';
 import WelcomePage from './content/WelcomePage';
+import HousePage from './content/HousePage';
+
+
 import CarPage from './content/CarPage';
 import MotorbikePage from './content/MotorbikePage';
 import BusRailPage from './content/BusRailPage';
@@ -27,6 +30,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/welcome" component={WelcomePage} />
+            <Route path="/house" component={HousePage} />
             <Route path="/flight" component={FlightPage} />
             <Route path="/car" component={CarPage} />
             <Route path="/motorbike" component={MotorbikePage} />

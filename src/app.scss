@@ -127,8 +127,8 @@ img{
     // background-color: rgba(233, 150, 122, 0.271);
     display: flex;
     flex-direction: row;
-    align-items:flex-end;
-    justify-content: center;
+    align-items:center;
+    justify-content: space-evenly;
 
 }
 
@@ -166,7 +166,7 @@ img{
     }
 }
 
-.frame-calculator {
+.main-container {
   
     
     background-repeat: no-repeat;
@@ -186,7 +186,7 @@ img{
     animation-play-state: paused;
 }
 
-.frame-calculator:hover {
+.main-container:hover {
     animation-play-state: running;
 }
 

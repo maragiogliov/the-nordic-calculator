@@ -99,6 +99,9 @@ const ResultsPage = () => {
         <Link to="/secondary">
           <Button className="navigation-content">Previous</Button>
         </Link>
+        <Link to="/welcome">
+          <Button className="navigation-content">Start Again</Button>
+        </Link>
        
         </div>
       </div>
