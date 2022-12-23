@@ -12,8 +12,9 @@ import {
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
+  Search,
 } from '@carbon/react';
-import { Switcher, Notification, UserAvatar } from '@carbon/react/icons';
+import { ShoppingCart } from '@carbon/react/icons';
 import { Link } from 'react-router-dom';
 
 
@@ -48,9 +49,6 @@ const TheHeader = () => (
               <HeaderMenuItem href="/welcome">Home</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
-              <HeaderMenuItem href="/house">House</HeaderMenuItem>
-            </HeaderSideNavItems>
-            <HeaderSideNavItems>
               <HeaderMenuItem href="/house">Flight</HeaderMenuItem>
             </HeaderSideNavItems>
             <HeaderSideNavItems>
@@ -68,14 +66,16 @@ const TheHeader = () => (
           </SideNavItems>
         </SideNav>
         <HeaderGlobalBar>
-          <HeaderGlobalAction aria-label="Notifications" tooltipAlignment="center">
-            <Notification size={20} />
-          </HeaderGlobalAction>
+       
+
           <HeaderGlobalAction aria-label="User Avatar" tooltipAlignment="center">
-            <UserAvatar size={20} />
+            <Search
+            input={0}
+             size={40} />
           </HeaderGlobalAction>
+
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
-            <Switcher size={20} />
+            <ShoppingCart size={24} />
           </HeaderGlobalAction>
         </HeaderGlobalBar>
 

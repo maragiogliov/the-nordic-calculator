@@ -16,12 +16,11 @@ const BusRailPage = () => {
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
-          <div className='progress-bar-container'>
+        <div className='progress-bar-container'>
     <Home
-     className='iconClass'
+    className='iconClass'
     size='32px' />
     <PlanePrivate
-     className='iconClass'
     size='32px'
     />
     <Car
@@ -33,7 +32,7 @@ const BusRailPage = () => {
     size='32px'
     />
      <Bus
-      
+      className='iconClass'
     size='32px'
     />
      <Add

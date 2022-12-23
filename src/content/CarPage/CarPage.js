@@ -20,11 +20,12 @@ const CarPage = () => {
     <Home
      className='iconClass'
     size='32px' />
+    
     <PlanePrivate
-    size='32px'
+    className='iconClass'
+      size='32px'
     />
     <Car
-      className='iconClass'
     size='32px'
     />
      <Scooter

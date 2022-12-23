@@ -28,3 +28,10 @@ Frame-calculator
 
 for the position we are using Flex 
 to see the grid, uncomment the background color # my-carbon-calculator
+
+
+# 1/3 Progressive icons
+
+A complete non very dynamic solution, do the trick for now. Unsustainable code.
+
+I copy and paste the same chunk of html in diferents component, I added a className='iconClass' reducing the opacity of all the icons but the one that correspond with theh route/page. The effect I am looking has to do with instant feedback and motion.
