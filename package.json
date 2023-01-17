@@ -6,6 +6,7 @@
     "@carbon/icons": "^11.13.0",
     "@carbon/motion": "^11.7.0",
     "@carbon/react": "^1.18.0",
+    "@reduxjs/toolkit": "^1.9.1",
     "carbon-components-react": "^8.19.0",
     "mongodb": "^4.13.0",
     "react": "^17.0.2",

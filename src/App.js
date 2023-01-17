@@ -5,9 +5,6 @@ import { Theme } from '@carbon/react';
 import TheHeader from './components/TheHeader/TheHeader';
 import { Content } from '@carbon/react';
 import { Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './store';
-
 import LandingPage from './content/LandingPage';
 import WelcomePage from './content/WelcomePage';
 import HousePage from './content/HousePage';
@@ -25,7 +22,6 @@ class App extends Component {
   render() {
     return (
       <>
-      <Provider store={store}>
       <BrowserRouter>
       <Theme theme="g100">
        <TheHeader />
@@ -46,8 +42,7 @@ class App extends Component {
           </Switch>
         </Content>
       </Theme>
-      </BrowserRouter>, 
-      </Provider>
+      </BrowserRouter>
       </>
     );
   }
