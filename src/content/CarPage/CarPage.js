@@ -56,7 +56,7 @@ const CarPage = () => {
             <div className='country'>
                 <h3>First, please tell us where you live</h3>
                 <div className='country-picker-container'>
-                      <Dropdown
+                {  /*    <Dropdown
                       className='date-picker'
                         items={[
                           { id: 'option-0', text: 'Denmark 🇩🇰' },
@@ -74,7 +74,7 @@ const CarPage = () => {
                           )
                         }
                         label="Select a country..."
-                      />
+                      /> */}
                   </div>
               </div>
             <div className='date'>
@@ -85,10 +85,10 @@ const CarPage = () => {
               </div>
             
               
-                <DatePicker className='date-picker' datePickerType="range">
+                {/* <DatePicker className='date-picker' datePickerType="range" id=''>
                   <DatePickerInput placeholder="Start" />
                   <DatePickerInput placeholder="End" />
-                </DatePicker>
+                      </DatePicker> */}
               
             </div>
       </div>

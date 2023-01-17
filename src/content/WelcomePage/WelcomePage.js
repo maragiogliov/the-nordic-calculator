@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+
 import { Button } from '@carbon/react';
 import { DatePicker, DatePickerInput } from '@carbon/react';
 import { Dropdown } from '@carbon/react';
@@ -10,8 +12,16 @@ import {Scooter} from '@carbon/react/icons';
 import {Bus} from '@carbon/react/icons';
 import {Add} from '@carbon/react/icons';
 import { ChartLineData } from '@carbon/react/icons';
+import { useSelector } from 'react-redux';
+
 
 const WelcomePage = () => {
+  const selectedCountry = useSelector(state => state.selectedCountry);
+
+    const handleSelectedCountry = (selectedCountry) => {
+        //dispatch an action to set the selected country
+    };
+
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
@@ -52,46 +62,14 @@ const WelcomePage = () => {
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
-        <div className='block-middle'>
-            <div className='country'>
-                <h3>First, please tell us where you live</h3>
-                <div className='country-picker-container'>
-                      <Dropdown
-                      className='date-picker'
-                        items={[
-                          { id: 'option-0', text: 'Denmark 🇩🇰' },
-                          { id: 'option-1', text: 'Sweden 🇸🇪' },
-                          { id: 'option-2', text: 'Norway 🇳🇴' },
-                          { id: 'option-2', text: 'Germany 🇩🇪' },
-                        ]}
-                        itemToElement={(item) =>
-                          item ? (
-                            <span className="test" style={{ color: 'white' }}>
-                              {item.text} 
-                            </span>
-                          ) : (
-                            ''
-                          )
-                        }
-                        label="Select a country..."
-                      />
-                  </div>
-              </div>
-            <div className='date'>
-              <div className='date-text'>
-                <h3>Enter the period this calculation covers</h3>
-                <h4 className='hide-text'>Carbon footprint calculations are typically based on annual  </h4>
-                <h4 className='hide-text'>emissions from the previous 12 months.</h4>
-              </div>
-            
-              
-                <DatePicker className='date-picker' datePickerType="range">
-                  <DatePickerInput placeholder="Start" />
-                  <DatePickerInput placeholder="End" />
-                </DatePicker>
-              
-            </div>
-      </div>
+
+   
+
+ 
+  
+
+
+
     {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>

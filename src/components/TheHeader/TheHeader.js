@@ -66,16 +66,19 @@ const TheHeader = () => (
             <HeaderSideNavItems>
               <HeaderMenuItem href="/results">Results</HeaderMenuItem>
             </HeaderSideNavItems>
+            <HeaderSideNavItems>
+              <HeaderMenuItem href="/calculatorTest">Calculator Test</HeaderMenuItem>
+            </HeaderSideNavItems>
           </SideNavItems>
         </SideNav>
         <HeaderGlobalBar>
        
-
+{/*
           <HeaderGlobalAction aria-label="User Avatar" tooltipAlignment="center">
             <Search
             input={0}
-             size={40} />
-          </HeaderGlobalAction>
+             size='sm' />
+    </HeaderGlobalAction> */}
 
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
             <ShoppingCart size={24} />

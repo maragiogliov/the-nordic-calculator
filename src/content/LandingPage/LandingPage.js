@@ -10,7 +10,7 @@ const LandingPage = () => {
         <section className='main-container'>
             LANDING PAGE
           <div className='ocean-picture'>
-            <img src={oceanPicture} alt="bg-image"/>
+            <img src={oceanPicture} alt="bg"/>
           </div>
          
             <Link to="/welcome">
