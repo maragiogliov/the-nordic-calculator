@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button } from '@carbon/react';
-import { DatePicker, DatePickerInput } from '@carbon/react';
-import { Dropdown } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
 

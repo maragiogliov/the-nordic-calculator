@@ -12,7 +12,6 @@ import {
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
-  Search,
 } from '@carbon/react';
 import { ShoppingCart } from '@carbon/react/icons';
 import { Link } from 'react-router-dom';
@@ -73,12 +72,7 @@ const TheHeader = () => (
         </SideNav>
         <HeaderGlobalBar>
        
-{/*
-          <HeaderGlobalAction aria-label="User Avatar" tooltipAlignment="center">
-            <Search
-            input={0}
-             size='sm' />
-    </HeaderGlobalAction> */}
+
 
           <HeaderGlobalAction aria-label="App Switcher" tooltipAlignment="end">
             <ShoppingCart size={24} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 
@@ -12,7 +11,7 @@ import { Add } from '@carbon/react/icons';
 import { ChartLineData } from '@carbon/react/icons';
 
 
-    {/* -------------------------------
+    /* -------------------------------
   Imported the withRouter Higher-Order Component (HOC) from the react-router-dom library to get access to the current location object.
 
   Wrapped the IconsNavigation component with the withRouter HOC to gain access to the location prop.
@@ -23,7 +22,7 @@ import { ChartLineData } from '@carbon/react/icons';
 
   Overall, these changes allow the icons to visually indicate which route the user is currently on and provides a clear way to navigate between different routes using icons.
   
-  ------------------------------------ */}
+  ------------------------------------ */
 
 
 
