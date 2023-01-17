@@ -1,59 +1,21 @@
 import React, { useState } from 'react';
-
-
 import { Button } from '@carbon/react';
-import { DatePicker, DatePickerInput } from '@carbon/react';
-import { Dropdown } from '@carbon/react';
 import { Link } from 'react-router-dom';
-import {Home} from '@carbon/react/icons';
-import { PlanePrivate } from '@carbon/react/icons';
-import {Car} from '@carbon/react/icons';
-import {Scooter} from '@carbon/react/icons';
-import {Bus} from '@carbon/react/icons';
-import {Add} from '@carbon/react/icons';
-import { ChartLineData } from '@carbon/react/icons';
-import { useSelector } from 'react-redux';
+import IconsNavigation from '../IconsNavigation/IconsNavigation'
+import CalculatorTest from '../CalculatorTest/CalculatorTest'
+
+
 
 
 const WelcomePage = () => {
-  const selectedCountry = useSelector(state => state.selectedCountry);
 
-    const handleSelectedCountry = (selectedCountry) => {
-        //dispatch an action to set the selected country
-    };
 
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
         <div className='progress-bar-container'>
-    <Home
-    className='iconClass'
-    size='32px' />
-    <PlanePrivate
-    className='iconClass'
-    size='32px'
-    />
-    <Car
-     className='iconClass'
-    size='32px'
-    />
-     <Scooter
-      className='iconClass'
-    size='32px'
-    />
-     <Bus
-      className='iconClass'
-    size='32px'
-    />
-     <Add
-    className='iconClass'
-    size='32px'
-    />
-    <ChartLineData
-    className='iconClass'
-    size='32px'
-    />
+        <IconsNavigation />
 
   </div>
           <div className='title'>
@@ -65,7 +27,7 @@ const WelcomePage = () => {
 
    
 
- 
+    <CalculatorTest />
   
 
 

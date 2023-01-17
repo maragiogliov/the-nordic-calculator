@@ -14,6 +14,13 @@
 }
 $base-color: #000000;
 
+.active {
+    color: rgb(255, 255, 255); 
+  }
+.icons-Class{
+    color: #C9C9C9;
+}
+
 
 //////////////////////////// Landing Page
 
@@ -47,7 +54,6 @@ img{
 
 .block-top{
     width: 100%;
-    height: calc(100% / 3);
     //background-color:($base-color);
     display: flex;
     flex-direction: column;
@@ -57,16 +63,16 @@ img{
 }
 
 .progress-bar-container{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-
-.iconClass{
-    opacity: 50%;
+.progress-bar-container a{
+  color: #c9c9c96c;
 }
+
 .block-top .title {
     margin-top: 5%;
 }
