@@ -1,12 +1,13 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
-
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
 
-
-
 const ResultsPage = () => {
+  const { footprint } = useSelector(
+    (state) => state.carbon
+  );
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
@@ -15,10 +16,13 @@ const ResultsPage = () => {
   <IconsNavigation />
 
 
+
+
   </div>
           <div className='title'>
             <h1>Results </h1>
       
+            <h1>{footprint}</h1>
 
           </div>
         </div>

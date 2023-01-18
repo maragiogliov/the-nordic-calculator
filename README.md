@@ -30,8 +30,18 @@ for the position we are using Flex
 to see the grid, uncomment the background color # my-carbon-calculator
 
 
-# 1/3 Progressive icons
 
-A complete non very dynamic solution, do the trick for now. Unsustainable code.
+# State Management with Redux-Toolkit (hell yeah)
+In the Carbon Footprint Calculator, the state of the selected country, transportation, electricity, waste, and footprint is managed using Redux :). 
 
-I copy and paste the same chunk of html in diferents component, I added a className='iconClass' reducing the opacity of all the icons but the one that correspond with theh route/page. The effect I am looking has to do with instant feedback and motion.
+The component retrieves the state from the store using the useSelector hook and updates the state by dispatching actions using the useDispatch hook.
+
+The component also renders the select input, input fields, and calculate button that allow users to input data and calculate the carbon footprint. 
+
+The component dispatches actions to update the state of the selected country, transportation, electricity, waste and footprint when the user makes a selection or clicks the calculate button.
+
+The state is stored in the store, which is created and configured in the store.js file and the state management is done by creating slice and actions in the carbon.js file.
+
+The component is connected to the Redux store using the connect function, which allows it to access the state and dispatch actions.
+
+The routing is done using React Router, where the component is rendered based on the URLs, the component is split into 3 components, welcome page, calculation page and result page.
