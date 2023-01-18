@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
 
 
+
 const CarPage = () => {
+
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
@@ -16,7 +18,7 @@ const CarPage = () => {
   </div>
           <div className='title'>
             <h1>Car </h1>
-           
+            
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}

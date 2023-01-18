@@ -1,10 +1,49 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import {setElectricity,setFootprint } from "../../redux/carbon";
+
 import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
 
 
 const HousePage = () => {
+  const { selectedCountry, transportation, electricity, waste, footprint } = useSelector(
+    (state) => state.carbon
+  );
+  const dispatch = useDispatch();
+
+
+  const countryFactors = {
+      USA: {electricity_factor:0.1908, food_waste_factor:1.5 },
+      Canada: {electricity_factor:0.2108, food_waste_factor:1.3 },
+      Mexico: {electricity_factor:0.1708, food_waste_factor:1.7 },
+      France: {electricity_factor:0.1508, food_waste_factor:1.4 },
+      Germany: {electricity_factor:0.2108, food_waste_factor:1.2 }
+  };
+  // function to handle input changes
+
+  const handleElectricityChange = (e) => {
+    dispatch(setElectricity(parseFloat(e.target.value)));
+  };
+
+
+  const calculateFootprint = () => {
+    if (
+      isNaN(parseFloat(transportation)) ||
+      isNaN(parseFloat(electricity)) ||
+      isNaN(parseFloat(waste))
+    ) {
+      dispatch(setFootprint("Please enter a valid number."));
+    } else {
+      let total =
+        parseFloat(transportation) +
+        parseFloat(electricity) * countryFactors[selectedCountry].electricity_factor;
+      total +=
+        parseFloat(waste) * countryFactors[selectedCountry].food_waste_factor;
+      dispatch(setFootprint(total.toFixed(2)));
+    }
+  };
   return <>
     <section className='frame-calculator'>
     {/* ------------------------------------------------------------------- */}
@@ -20,7 +59,22 @@ const HousePage = () => {
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
+    <div>
  
+
+    <br />
+    <label>
+      Electricity:{" "}
+      <input
+        type="number"
+        value={electricity || ""}
+        onChange={handleElectricityChange}
+        />
+      </label>
+      <br />
+      <button onClick={calculateFootprint}>Calculate</button>
+      <h1>{footprint}</h1>
+    </div>
     {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>

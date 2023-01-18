@@ -3,6 +3,8 @@ import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
 
+
+
 const BusRailPage = () => {
   return <>
     <section className='frame-calculator'>
@@ -10,6 +12,9 @@ const BusRailPage = () => {
         <div className='block-top'>
         <div className='progress-bar-container'>
         <IconsNavigation />
+
+
+ 
 
         </div>
           <div className='title'>

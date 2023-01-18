@@ -1,14 +1,22 @@
 import React from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { selectCountry } from "../../redux/carbon";
 import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation'
-import CalculatorTest from '../CalculatorTest/CalculatorTest'
 
 
+const countries = ["USA", "Canada", "Mexico", "France", "Germany"];
 
 
 const WelcomePage = () => {
-
+  const { selectedCountry } = useSelector(
+    (state) => state.carbon
+  );
+  const dispatch = useDispatch();
+  const handleCountryChange = (e) => {
+    dispatch(selectCountry(e.target.value));
+  };
 
   return <>
     <section className='frame-calculator'>
@@ -24,10 +32,21 @@ const WelcomePage = () => {
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
-
+    <h3>Select a country to start your calculation</h3>
+      <label>
+        Country:
+        <select value={selectedCountry} onChange={handleCountryChange}>
+          {countries.map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
+        </select>
+      </label>
+           
    
 
-    <CalculatorTest />
+    
   
 
 
