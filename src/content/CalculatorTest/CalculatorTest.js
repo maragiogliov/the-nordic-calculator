@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { selectCountry, setTransportation, setElectricity, setWaste, setFootprint } from "../../redux/carbon";
+import countryFactors from '../../countryFactors';
 
 const CarbonFootprintCalculator = () => {
   const { selectedCountry, transportation, electricity, waste, footprint } = useSelector(
@@ -10,13 +11,7 @@ const CarbonFootprintCalculator = () => {
   const countries = ["USA", "Canada", "Mexico", "France", "Germany"];
 
 
-  const countryFactors = {
-      USA: {electricity_factor:0.1908, food_waste_factor:1.5 },
-      Canada: {electricity_factor:0.2108, food_waste_factor:1.3 },
-      Mexico: {electricity_factor:0.1708, food_waste_factor:1.7 },
-      France: {electricity_factor:0.1508, food_waste_factor:1.4 },
-      Germany: {electricity_factor:0.2108, food_waste_factor:1.2 }
-  };
+
 
 
   // function to handle input changes
