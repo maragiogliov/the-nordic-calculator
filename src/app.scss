@@ -46,6 +46,7 @@ img{
 .frame-calculator{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 2rem;
     margin: 0;
     height: calc(95vh - 111px);

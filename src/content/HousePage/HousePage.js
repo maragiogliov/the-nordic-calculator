@@ -72,7 +72,7 @@ const HousePage = () => {
       </label>
       <br />
       <label>
-        Electricity Factor:{" "}
+      kWh at a factor of:{" "}
         <input
           type="number"
           value={userElectricityFactor !== null 
