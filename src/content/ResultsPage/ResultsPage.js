@@ -22,7 +22,7 @@ const ResultsPage = () => {
           <div className='title'>
             <h1>Results </h1>
       
-            <h1>{footprint}</h1>
+            <h1>Total To Offset = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
 
           </div>
         </div>

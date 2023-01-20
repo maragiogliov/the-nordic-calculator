@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import {setElectricity,setFootprint } from "../../redux/carbon";
+import {setElectricity,setFootprint, setUserElectricityFactor } from "../../redux/carbon";
 
 import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
@@ -13,11 +13,12 @@ const HousePage = () => {
     (state) => state.carbon
   );
   const dispatch = useDispatch();
-  const [userElectricityFactor, setUserElectricityFactor] = useState(null);
+  const {userElectricityFactor} = useSelector(state => state.carbon)
 
+ 
   const handleUserElectricityChange = (e) => {
-    setUserElectricityFactor(parseFloat(e.target.value));
-    dispatch(setUserElectricityFactor(parseFloat(e.target.value)));
+    const factor = parseFloat(e.target.value);
+    dispatch(setUserElectricityFactor(factor));
   };
 
   // function to handle input changes
@@ -36,8 +37,8 @@ const HousePage = () => {
       dispatch(setFootprint("Please enter a valid number."));
     } else {
       let total =
-        parseFloat(transportation) +
-        parseFloat(electricity) * (userElectricityFactor || countryFactors[selectedCountry].electricity_factor);
+      parseFloat(transportation) +
+      parseFloat(electricity) * (userElectricityFactor || countryFactors[selectedCountry].electricity_factor);
       total +=
         parseFloat(waste) * countryFactors[selectedCountry].food_waste_factor;
       dispatch(setFootprint(total.toFixed(2)));
@@ -82,11 +83,13 @@ const HousePage = () => {
         />
         kgCO2e/kWh
       </label>
-      <button onClick={calculateFootprint}>Calculate</button>
-      <h1>{footprint}</h1>
+
     </div>
     {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
+      <button onClick={calculateFootprint}>Calculate Household Footprint</button>
+      <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e
+</h1>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
         <Link to="/welcome">
