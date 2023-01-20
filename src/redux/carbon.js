@@ -5,7 +5,8 @@ const initialState = {
   transportation: 0,
   electricity: 0,
   waste: 0,
-  footprint: ""
+  footprint: "",
+  userElectricityFactor: null
 };
 
 export const carbonSlice = createSlice({
@@ -26,10 +27,13 @@ export const carbonSlice = createSlice({
     },
     setFootprint: (state, action) => {
       state.footprint = action.payload;
+    },
+    setUserElectricityFactor: (state, action) => {
+      state.userElectricityFactor = action.payload;
     }
   }
 });
 
-export const { selectCountry, setTransportation, setElectricity, setWaste, setFootprint } = carbonSlice.actions;
+export const { selectCountry, setTransportation, setElectricity, setWaste, setFootprint, setUserElectricityFactor } = carbonSlice.actions;
 
 export default carbonSlice.reducer;

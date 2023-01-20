@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {setElectricity,setFootprint } from "../../redux/carbon";
 
@@ -13,6 +13,12 @@ const HousePage = () => {
     (state) => state.carbon
   );
   const dispatch = useDispatch();
+  const [userElectricityFactor, setUserElectricityFactor] = useState(null);
+
+  const handleUserElectricityChange = (e) => {
+    setUserElectricityFactor(parseFloat(e.target.value));
+    dispatch(setUserElectricityFactor(parseFloat(e.target.value)));
+  };
 
   // function to handle input changes
 
@@ -31,7 +37,7 @@ const HousePage = () => {
     } else {
       let total =
         parseFloat(transportation) +
-        parseFloat(electricity) * countryFactors[selectedCountry].electricity_factor;
+        parseFloat(electricity) * (userElectricityFactor || countryFactors[selectedCountry].electricity_factor);
       total +=
         parseFloat(waste) * countryFactors[selectedCountry].food_waste_factor;
       dispatch(setFootprint(total.toFixed(2)));
@@ -65,6 +71,17 @@ const HousePage = () => {
         />
       </label>
       <br />
+      <label>
+        Electricity Factor:{" "}
+        <input
+          type="number"
+          value={userElectricityFactor !== null 
+          ? userElectricityFactor 
+          : countryFactors[selectedCountry].electricity_factor || ""}
+          onChange={handleUserElectricityChange}
+        />
+        kgCO2e/kWh
+      </label>
       <button onClick={calculateFootprint}>Calculate</button>
       <h1>{footprint}</h1>
     </div>
