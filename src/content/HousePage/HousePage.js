@@ -2,14 +2,14 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {setElectricity,setFootprint, setUserElectricityFactor } from "../../redux/carbon";
 
-import { Button, TextInput} from '@carbon/react';
+import { Button, TextInput, NumberInput} from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation';
 import countryFactors from '../../countryFactors'
 
 
 const HousePage = () => {
-  const { selectedCountry, transportation, electricity, waste, footprint } = useSelector(
+  const { selectedCountry, transportation, electricity, waste, footprint} = useSelector(
     (state) => state.carbon
   );
   const dispatch = useDispatch();
@@ -48,37 +48,34 @@ const HousePage = () => {
   };
   return <>
     <section className='frame-calculator'>
-    {/* ------------------------------------------------------------------- */}
+     {/* ------------------------------------------------------------------- */}
         <div className='block-top'>
-        <div className='progress-bar-container'>
-        <IconsNavigation />
-
-
-  </div>
+          <div className='progress-bar-container'>
+            <IconsNavigation />
+          </div>
           <div className='title'>
             <h1>House </h1>
-           
           </div>
         </div>
-    {/* ------------------------------------------------------------------- */}
+     {/* ------------------------------------------------------------------- */}
  
  
-    <section className='block-middle'>
-
+     <section className='block-middle'>
+      <section className='block-middle-1'>
+      </section>
+      <section className='block-middle-2'>
+        <NumberInput
+            id="people-select"
+            label="Number of people in the house:"
+          
+          />
+      <TextInput
+          id="electricity-input"
+          labelText="Electricity in kWh"
+          value={electricity || ""}
+          onChange={handleElectricityChange}
+          />
     
-    <TextInput
-        id="electricity-input"
-        labelText="Electricity in kWh"
-
-        value={electricity || ""}
-        onChange={handleElectricityChange}
-        />
-    
-
-
-    
-
-      
         <TextInput
           id="electricity-factor"
           labelText="at a factor of:"
@@ -88,19 +85,17 @@ const HousePage = () => {
           : countryFactors[selectedCountry].electricity_factor || ""}
           onChange={handleUserElectricityChange}
         />
+      </section>
+      </section>
 
   
-    </section>
-
-  
-    {/* ------------------------------------------------------------------- */}
+      {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
-      <Button 
-      onClick={calculateFootprint}
-      kind="tertiary"
-     className="button-center-text"
-      >Calculate Household Footprint</Button>
-      <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
+        <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text"
+        >Calculate Household Footprint
+        </Button>
+
+        <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
         <Link to="/welcome">
@@ -111,7 +106,7 @@ const HousePage = () => {
         </Link>
         </div>
       </div>
-   </section>
+    </section>
 
  
   </>;
