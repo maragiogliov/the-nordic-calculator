@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {setElectricity,setFootprint, setUserElectricityFactor } from "../../redux/carbon";
 
-import { Button } from '@carbon/react';
+import { Button, TextInput} from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation';
 import countryFactors from '../../countryFactors'
@@ -26,6 +26,8 @@ const HousePage = () => {
   const handleElectricityChange = (e) => {
     dispatch(setElectricity(parseFloat(e.target.value)));
   };
+
+  
 
 
   const calculateFootprint = () => {
@@ -59,37 +61,45 @@ const HousePage = () => {
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
-    
  
-
+ 
     <section className='block-middle'>
 
-    <label>
-      Electricity:{" "}
-      <input
-        type="number"
+    
+    <TextInput
+        id="electricity-input"
+        labelText="Electricity in kWh"
+
         value={electricity || ""}
         onChange={handleElectricityChange}
         />
-    </label>
-      <br />
-    <label>
-        kWh at a factor of:{" "}
-        <input
+    
+
+
+    
+
+      
+        <TextInput
+          id="electricity-factor"
+          labelText="at a factor of:"
           type="number"
           value={userElectricityFactor !== null 
           ? userElectricityFactor 
           : countryFactors[selectedCountry].electricity_factor || ""}
           onChange={handleUserElectricityChange}
         />
-        kgCO2e/kWh
-    </label>
+
+  
     </section>
 
   
     {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
-      <button onClick={calculateFootprint}>Calculate Household Footprint</button>
+      <Button 
+      onClick={calculateFootprint}
+      kind="tertiary"
+     className="button-center-text"
+      >Calculate Household Footprint</Button>
       <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
