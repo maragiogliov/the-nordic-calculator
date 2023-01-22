@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectCountry } from "../../redux/carbon";
 import { Button } from '@carbon/react';
 import { Link } from 'react-router-dom';
-import IconsNavigation from '../IconsNavigation/IconsNavigation'
-
+import IconsNavigation from '../IconsNavigation/IconsNavigation';
+import { Dropdown, Select, SelectItem } from 'carbon-components-react';
 
 const countries = ["USA", "Canada", "Mexico", "France", "Germany"];
 
@@ -33,22 +33,11 @@ const WelcomePage = () => {
         </div>
     {/* ------------------------------------------------------------------- */}
     <h3>Select a country to start your calculation</h3>
-      <label>
-        Country:
-        <select value={selectedCountry} onChange={handleCountryChange}>
-          {countries.map((country) => (
-            <option key={country} value={country}>
-              {country}
-            </option>
-          ))}
-        </select>
-      </label>
-           
-   
-
-    
-  
-
+    <Select id='country-select' defaultValue={selectedCountry} onChange={handleCountryChange}>
+        {countries.map((country) => (
+            <SelectItem key={country} value={country} text={country} />
+        ))}
+    </Select>
 
 
     {/* ------------------------------------------------------------------- */}

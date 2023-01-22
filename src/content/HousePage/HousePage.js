@@ -59,10 +59,11 @@ const HousePage = () => {
           </div>
         </div>
     {/* ------------------------------------------------------------------- */}
-    <div>
+    
  
 
-    <br />
+    <section className='block-middle'>
+
     <label>
       Electricity:{" "}
       <input
@@ -70,10 +71,10 @@ const HousePage = () => {
         value={electricity || ""}
         onChange={handleElectricityChange}
         />
-      </label>
+    </label>
       <br />
-      <label>
-      kWh at a factor of:{" "}
+    <label>
+        kWh at a factor of:{" "}
         <input
           type="number"
           value={userElectricityFactor !== null 
@@ -82,14 +83,14 @@ const HousePage = () => {
           onChange={handleUserElectricityChange}
         />
         kgCO2e/kWh
-      </label>
+    </label>
+    </section>
 
-    </div>
+  
     {/* ------------------------------------------------------------------- */}
       <div className='block-bottom'>
       <button onClick={calculateFootprint}>Calculate Household Footprint</button>
-      <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e
-</h1>
+      <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
         <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
         <div className='navigation-container'>
         <Link to="/welcome">
