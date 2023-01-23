@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {setElectricity,setFootprint, setUserElectricityFactor } from "../../redux/carbon";
 
-import { Button, TextInput, NumberInput} from '@carbon/react';
+import { Button, TextInput } from '@carbon/react';
 import { Link } from 'react-router-dom';
 import IconsNavigation from '../IconsNavigation/IconsNavigation';
 import countryFactors from '../../countryFactors'
@@ -15,7 +15,14 @@ const HousePage = () => {
   const dispatch = useDispatch();
   const {userElectricityFactor} = useSelector(state => state.carbon)
 
- 
+  // Declare the state variable for the number of people
+  const [numPeople, setNumPeople] = useState(1);
+  
+
+  const handleNumPeopleChange = (e) => {
+    setNumPeople(e.target.value);
+  }
+
   const handleUserElectricityChange = (e) => {
     const factor = parseFloat(e.target.value);
     dispatch(setUserElectricityFactor(factor));
@@ -27,8 +34,6 @@ const HousePage = () => {
     dispatch(setElectricity(parseFloat(e.target.value)));
   };
 
-  
-
 
   const calculateFootprint = () => {
     if (
@@ -38,9 +43,7 @@ const HousePage = () => {
     ) {
       dispatch(setFootprint("Please enter a valid number."));
     } else {
-      let total =
-      parseFloat(transportation) +
-      parseFloat(electricity) * (userElectricityFactor || countryFactors[selectedCountry].electricity_factor);
+      let total = parseFloat(transportation) + (parseFloat(electricity) / parseFloat(numPeople)) * (userElectricityFactor || countryFactors[selectedCountry].electricity_factor);
       total +=
         parseFloat(waste) * countryFactors[selectedCountry].food_waste_factor;
       dispatch(setFootprint(total.toFixed(2)));
@@ -62,18 +65,22 @@ const HousePage = () => {
  
      <section className='block-middle'>
       <section className='block-middle-1'>
-      </section>
-      <section className='block-middle-2'>
-        <NumberInput
+      <TextInput
             id="people-select"
-            label="Number of people in the house:"
+            labelText="Number of people in the house:"
+            value={numPeople}
+            onChange={handleNumPeopleChange}
           
           />
+      </section>
+      <section className='block-middle-2'>
+        
       <TextInput
           id="electricity-input"
           labelText="Electricity in kWh"
           value={electricity || ""}
           onChange={handleElectricityChange}
+          
           />
     
         <TextInput
