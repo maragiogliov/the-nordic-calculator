@@ -158,9 +158,7 @@ const HousePage = () => {
       </section>
         {/* ------------------------------------------------------------------- */}
         <div className='block-bottom'>
-          <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text"
-          >Calculate Household Footprint
-          </Button>
+        
 
           <h4>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h4>
 
@@ -168,6 +166,9 @@ const HousePage = () => {
           <Link to="/welcome">
             <Button className="navigation-content">Previous</Button>
           </Link>
+          <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text"
+          >Calculate Household Footprint
+          </Button>
           <Link to="/flight">
             <Button className="navigation-content">Next</Button>
           </Link>
