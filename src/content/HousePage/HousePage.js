@@ -58,8 +58,8 @@ const HousePage = () => {
             </div>
             <div className='title'>
               <h3>Household carbon footprint calculator</h3>
-              <p>Enter your consumption of each type of energy, and press the Calculate button</p>
-              <p>Your individual footprint is calculated by dividing the amount of energy by the number of people in your house.</p>
+              <p id='block-top-hide'>Enter your consumption of each type of energy, and press the Calculate button</p>
+              <p id='block-top-hide'>Your individual footprint is calculated by dividing the amount of energy by the number of people in your house.</p>
             </div>
           </div>
       {/* ------------------------------------------------------------------- */}
@@ -76,7 +76,7 @@ const HousePage = () => {
                 />
           </section>
           <section className='block-middle-1-2'>
-            <p>To calculate your full household footprint, select "1".</p>
+            <p id='block-top-hide'>To calculate your full household footprint, select "1".</p>
           </section>
         </section>
 

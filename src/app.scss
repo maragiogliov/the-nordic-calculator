@@ -65,6 +65,7 @@ img{
     
 }
 
+
 .progress-bar-container{
     width: 100%;
     display: flex;
@@ -112,7 +113,7 @@ img{
 .block-middle-1-1 {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     //background-color: #0ffe82;
@@ -140,7 +141,7 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     height: 2.5rem;
     width: 12rem;
     //background-color: brown;
@@ -248,10 +249,24 @@ img{
     animation-play-state: running;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 500px) {
 
     .hide-text{
         display: none;
+    }
+    #block-top-hide{
+        display:none;
+    }
+
+    .frame-calculator{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .block-middle-1-1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
    
 }
