@@ -105,54 +105,78 @@ const HousePage = () => {
           <h5 className='block-middle-titles'>Natural Gas:</h5>
           <TextInput
               className='block-middle-form'
+              id="naturalgas-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="naturalgas-type"
+              labelText=""
             />
         </section>
         <section className='block-middle-3'>
           <h5 className='block-middle-titles'>Heating oil:</h5>
           <TextInput
               className='block-middle-form'
+              id="heatingoil-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="heatingoil-type"
+              labelText=""
             />
         </section>
         <section className='block-middle-3'>
           <h5 className='block-middle-titles'>Coal:</h5>
           <TextInput
               className='block-middle-form'
+              id="coal-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="coal-type"
+              labelText=""
             />
         </section>
         <section className='block-middle-3'>
           <h5 className='block-middle-titles'>LPG:</h5>
           <TextInput
               className='block-middle-form'
+              id="lpg-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="lpg-type"
+              labelText=""
             />
         </section>
         <section className='block-middle-3'>
           <h5 className='block-middle-titles'>Propane:</h5>
           <TextInput
               className='block-middle-form'
+              id="propane-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="propane-type"
+              labelText=""
             />
         </section>
         <section className='block-middle-3'>
           <h5 className='block-middle-titles'>Wooden Pallets:</h5>
           <TextInput
               className='block-middle-form'
+              id="woodenpallets-amount"
+              labelText=""
           />
           <TextInput
               className='block-middle-form'
+              id="woodenpallets-type"
+              labelText=""
             />
         </section>
       </section>
@@ -160,7 +184,9 @@ const HousePage = () => {
         <div className='block-bottom'>
         
 
-          <h4>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h4>
+        <h6>Total House Footprint = <span style={{ color: "red"}}>{(footprint * 0.001).toFixed(2)}</span> metric tons of CO2e</h6>          <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text-show"
+          >Calculate Household Footprint
+          </Button>
 
           <div className='navigation-container'>
           <Link to="/welcome">
