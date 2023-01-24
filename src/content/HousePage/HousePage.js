@@ -51,70 +51,129 @@ const HousePage = () => {
   };
   return <>
     <section className='frame-calculator'>
-     {/* ------------------------------------------------------------------- */}
-        <div className='block-top'>
-          <div className='progress-bar-container'>
-            <IconsNavigation />
-          </div>
-          <div className='title'>
-            <h1>House </h1>
-          </div>
-        </div>
-     {/* ------------------------------------------------------------------- */}
- 
- 
-     <section className='block-middle'>
-      <section className='block-middle-1'>
-      <TextInput
-            id="people-select"
-            labelText="Number of people in the house:"
-            value={numPeople}
-            onChange={handleNumPeopleChange}
-          
-          />
-      </section>
-      <section className='block-middle-2'>
-        
-      <TextInput
-          id="electricity-input"
-          labelText="Electricity in kWh"
-          value={electricity || ""}
-          onChange={handleElectricityChange}
-          
-          />
-    
-        <TextInput
-          id="electricity-factor"
-          labelText="at a factor of:"
-          type="number"
-          value={userElectricityFactor !== null 
-          ? userElectricityFactor 
-          : countryFactors[selectedCountry].electricity_factor || ""}
-          onChange={handleUserElectricityChange}
-        />
-      </section>
-      </section>
-
-  
       {/* ------------------------------------------------------------------- */}
-      <div className='block-bottom'>
-        <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text"
-        >Calculate Household Footprint
-        </Button>
+          <div className='block-top'>
+            <div className='progress-bar-container'>
+              <IconsNavigation />
+            </div>
+            <div className='title'>
+              <h3>Household carbon footprint calculator</h3>
+              <p>Enter your consumption of each type of energy, and press the Calculate button</p>
+              <p>Your individual footprint is calculated by dividing the amount of energy by the number of people in your house.</p>
+            </div>
+          </div>
+      {/* ------------------------------------------------------------------- */}
+      <section className='block-middle'>
+        <section className='block-middle-1'>
+          <section className='block-middle-1-1'>
+            <p>How many people are in your household?</p>
+            <TextInput
+                  id="people-select"
+                  labelText=""
+                  value={numPeople}
+                  onChange={handleNumPeopleChange}
+                  className='block-middle-people'
+                />
+          </section>
+          <section className='block-middle-1-2'>
+            <p>To calculate your full household footprint, select "1".</p>
+          </section>
+        </section>
 
-        <h1>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h1>
-        <h5 className='block-bottom-top'>With your calculation, you can offset your emissions through one of our climate-friendly projects.</h5>
-        <div className='navigation-container'>
-        <Link to="/welcome">
-          <Button className="navigation-content">Previous</Button>
-        </Link>
-        <Link to="/flight">
-          <Button className="navigation-content">Next</Button>
-        </Link>
+        <section className='block-middle-2'>
+          <h5 className='block-middle-titles'>Electricity:</h5>
+        <TextInput
+            id="electricity-input"
+            labelText="Electricity in kWh"
+            value={electricity || ""}
+            onChange={handleElectricityChange}    
+            className='block-middle-form'
+            />
+      
+          <TextInput
+            id="electricity-factor"
+            labelText="at a factor of:"
+            type="number"
+            value={userElectricityFactor !== null 
+            ? userElectricityFactor 
+            : countryFactors[selectedCountry].electricity_factor || ""}
+            onChange={handleUserElectricityChange}
+            className='block-middle-form'
+          />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>Natural Gas:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>Heating oil:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>Coal:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>LPG:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>Propane:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+        <section className='block-middle-3'>
+          <h5 className='block-middle-titles'>Wooden Pallets:</h5>
+          <TextInput
+              className='block-middle-form'
+          />
+          <TextInput
+              className='block-middle-form'
+            />
+        </section>
+      </section>
+        {/* ------------------------------------------------------------------- */}
+        <div className='block-bottom'>
+          <Button onClick={calculateFootprint} kind="tertiary"className="button-center-text"
+          >Calculate Household Footprint
+          </Button>
+
+          <h4>Total House Footprint = {(footprint * 0.001).toFixed(2)} metric tons of CO2e</h4>
+
+          <div className='navigation-container'>
+          <Link to="/welcome">
+            <Button className="navigation-content">Previous</Button>
+          </Link>
+          <Link to="/flight">
+            <Button className="navigation-content">Next</Button>
+          </Link>
+          </div>
         </div>
-      </div>
     </section>
-
  
   </>;
 
